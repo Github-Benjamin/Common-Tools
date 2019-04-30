@@ -2,6 +2,8 @@
  * Created by Benjamin on 2019/4/29.
  */
 import Utils.GetTimeUtil;
+import Utils.StringLenUtil;
+import Utils.UrlCodeUtil;
 
 import java.awt.BorderLayout;
 
@@ -17,7 +19,7 @@ import javax.swing.*;
 
 public class MainUI extends JPanel implements ActionListener {
 
-    JTextField unixText,bjText;
+    JTextField unixText,bjText,urlDEcode,urlENcode;
     JTextArea  lenText;
 
 
@@ -41,8 +43,8 @@ public class MainUI extends JPanel implements ActionListener {
 
 
         //第二个标签
-        JPanel panel1 = createPanel("panel1");
-        tp.addTab("panel1",ii,panel1,"do noting");
+        JPanel panel1 = createTab1Panel();
+        tp.addTab("URL 解&编码",ii,panel1,"do noting");
         tp.setMnemonicAt(1, KeyEvent.VK_1);
 
 
@@ -138,7 +140,12 @@ public class MainUI extends JPanel implements ActionListener {
         if(e.getActionCommand()=="转换")
         {
             String unixTime = unixText.getText();
-            bjText.setText(GetTimeUtil.TimeStamp2Date(unixTime));
+            if(unixTime.isEmpty()){
+                bjText.setText("no data");
+            }else{
+                bjText.setText(GetTimeUtil.TimeStamp2Date(unixTime));
+            }
+
 
         }
 
@@ -146,7 +153,11 @@ public class MainUI extends JPanel implements ActionListener {
         {
            String bjTime = bjText.getText();
             try {
-                unixText.setText(GetTimeUtil.dateToStamp(bjTime));
+                if(bjTime.isEmpty()){
+                    unixText.setText("no data");
+                }else{
+                    unixText.setText(GetTimeUtil.dateToStamp(bjTime));
+                }
             } catch (ParseException e1) {
                 e1.printStackTrace();
             }
@@ -160,7 +171,90 @@ public class MainUI extends JPanel implements ActionListener {
             bjText.setText(GetTimeUtil.TimeStamp2Date(getNoteTime));
         }
 
+
+        if(e.getActionCommand()=="获取长度")
+        {
+            String lentext = lenText.getText();
+            if( lentext.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                JOptionPane.showMessageDialog(null,"字符串长度为：" + StringLenUtil.StringLen(lentext),"提示消息",JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+
+
+        }
+
+
+        if(e.getActionCommand()=="编码")
+        {
+            String decodeText = urlDEcode.getText();
+            if( decodeText.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                urlENcode.setText(UrlCodeUtil.EnCode(decodeText));
+            }
+
+        }
+
+
+        if(e.getActionCommand()=="解码")
+        {
+            String encodeText = urlENcode.getText();
+            if( encodeText.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                urlDEcode.setText(UrlCodeUtil.DECode(encodeText));
+            }
+
+        }
+
+
+
+
+
     }
+
+    // URL 编码解码
+    private JPanel createTab1Panel(){
+
+        JPanel panel = new JPanel(false);
+        panel.setLayout(null);  // new GridLayout()
+
+        JLabel unixTab = new JLabel("URL编码:");
+        urlENcode = new JTextField(10);
+        JButton btnZH = new JButton("解码");
+
+        JLabel bjTab = new JLabel("URL解码:");
+        urlDEcode = new JTextField(10);
+        JButton btnFZ = new JButton("编码");
+
+        // 设置监听
+        btnZH.addActionListener(this);
+        btnFZ.addActionListener(this);
+
+        panel.add(unixTab);
+        panel.add(urlENcode);
+        panel.add(btnZH);
+        panel.add(bjTab);
+        panel.add(urlDEcode);
+        panel.add(btnFZ);
+
+        unixTab.setBounds(50, 75, 100, 25);
+        urlENcode.setBounds(130, 75, 160, 25);
+        btnZH.setBounds(300, 75, 60, 25);
+
+        bjTab.setBounds(50, 120, 100, 25);
+        urlDEcode.setBounds(130, 120, 160, 25);
+        btnFZ.setBounds(300, 120, 60, 25);
+
+        return panel;
+    }
+
+
 
 
     // unix时间戳转换
@@ -228,7 +322,6 @@ public class MainUI extends JPanel implements ActionListener {
 
         return panel;
     }
-
 
 
 
