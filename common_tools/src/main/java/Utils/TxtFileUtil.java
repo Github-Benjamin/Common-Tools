@@ -6,9 +6,9 @@ import java.io.*;
  * Created by Benjamin on 2019/5/5.
  */
 public class TxtFileUtil {
-    public static void WriteStringToFile(String filename,String content) {
+    public static void WriteStringToFile(String filename,String nowTime,String content) {
         try {
-            String filePath = filename + GetTimeUtil.GetNowTimeStamp() + ".txt";
+            String filePath = filename + nowTime + ".txt";
             File file = new File(filePath);
 
             // 存储操作

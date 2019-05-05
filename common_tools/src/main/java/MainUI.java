@@ -17,7 +17,7 @@ import javax.swing.*;
 
 public class MainUI extends JPanel implements ActionListener {
 
-    JTextField unixText,bjText,urlDEcode,urlENcode;
+    JTextField unixText,bjText,urlDEcode,urlENcode,base64DEcode,base64ENcode,UniDEcode,UniENcode;
     JTextArea  lenText,formatStrText;
     JRadioButton JsonSelect,XmlSelect;
 
@@ -34,31 +34,41 @@ public class MainUI extends JPanel implements ActionListener {
         ImageIcon ii = createImageIcon("images/middle.gif");
 
         //创建第一个标签下的panel
-        JPanel panel0 = createTab0Panel();
+        JPanel panel0 = createTabStrFormatPanel();
         //指定标签名，标签图标，panel，和提示信息
         tp.addTab("字符串格式",ii,panel0,"do noting");
         //设置标签的快捷键
         tp.setMnemonicAt(0, KeyEvent.VK_0);
 
-
         //第二个标签
-        JPanel panel1 = createTab1Panel();
-        tp.addTab("URL 解&编码",ii,panel1,"do noting");
-        tp.setMnemonicAt(1, KeyEvent.VK_1);
-
+        JPanel panel1 = createTabUnixPanel();
+        tp.addTab("Unix时间戳",ii,panel1,"do noting");
+        tp.setMnemonicAt(1, KeyEvent.VK_2);
 
         //第三个标签
-        JPanel panel2 = createTab2Panel();
-        tp.addTab("Unix时间戳",ii,panel2,"do noting");
-        tp.setMnemonicAt(2, KeyEvent.VK_2);
-
-
+        JPanel panel2 = createTabStrLenPanel();
+        tp.addTab("字符长度",ii,panel2,"do noting");
+        tp.setMnemonicAt(2, KeyEvent.VK_3);
 
         //第四个标签
-        JPanel panel3 = createTab3Panel();
-        tp.addTab("字符长度",ii,panel3,"do noting");
-        tp.setMnemonicAt(3, KeyEvent.VK_3);
+        JPanel panel3 = createTabBase64Panel();
+        tp.addTab("Base64 编&解码",ii,panel3,"do noting");
+        tp.setMnemonicAt(3, KeyEvent.VK_1);
 
+        //第五个标签
+        JPanel panel4 = createTabUrlPanel();
+        tp.addTab("URL 编&解码",ii,panel4,"do noting");
+        tp.setMnemonicAt(4, KeyEvent.VK_1);
+
+        //第六个标签
+        JPanel panel5 = createTabUniCodePanel();
+        tp.addTab("Unicode 编&解码",ii,panel5,"do noting");
+        tp.setMnemonicAt(5, KeyEvent.VK_3);
+
+        //第七个标签
+        JPanel panel6 = createTabAboutPanel();
+        tp.addTab("关于",ii,panel6,"do noting");
+        tp.setMnemonicAt(6, KeyEvent.VK_3);
 
         //设置合适的显示尺寸，这个是必须的，因为如果所有的标签都
         //不指定适合的显示尺寸，系统无法判断初始显示尺寸大小
@@ -99,7 +109,7 @@ public class MainUI extends JPanel implements ActionListener {
         URL url = MainUI.class.getResource(string);
         if(url == null)
         {
-            System.out.println("the image "+string+" is not exist!");
+//            System.out.println("the image "+string+" is not exist!");
             return null;
         }
         return new ImageIcon(url);
@@ -146,14 +156,25 @@ public class MainUI extends JPanel implements ActionListener {
                 return;
             }else {
                 // 选中字符串格式化
+                String nowTIme = GetTimeUtil.GetNowTimeStamp();
                 if(JsonSelect.isSelected())
                 {
                     String JsonData  = JsonUtil.JsonFormat(formatStr);
-                    TxtFileUtil.WriteStringToFile("JSON",JsonData);
+                    TxtFileUtil.WriteStringToFile("JSON",nowTIme,JsonData);
+                    JOptionPane.showMessageDialog(null,String.format("Create JSON File Success\nPlease Check: JSON%s:.txt",nowTIme),"提示消息",JOptionPane.INFORMATION_MESSAGE);
+                    return;
                 }else if(XmlSelect.isSelected())
                 {
-                    String XmlData  = XmlUtil.Format(formatStr);
-                    TxtFileUtil.WriteStringToFile("XML",XmlData);
+                    try {
+                        String XmlData  = XmlUtil.Format(formatStr);
+                        TxtFileUtil.WriteStringToFile("XML",nowTIme,XmlData);
+                        JOptionPane.showMessageDialog(null,String.format("Create XML File Success\nPlease Check: XML%s:.txt",nowTIme),"提示消息",JOptionPane.INFORMATION_MESSAGE);
+                        return;
+                    }catch (Exception a){
+                        JOptionPane.showMessageDialog(null,"Create XML File Failed\nPlease Check XML DATA","提示消息",JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
                 }
             }
 
@@ -237,6 +258,55 @@ public class MainUI extends JPanel implements ActionListener {
         }
 
 
+        if(e.getActionCommand()=="DeCode")
+        {
+            String encodeText = base64ENcode.getText();
+            if( encodeText.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                base64DEcode.setText(Base64CodeUtil.DECode(encodeText));
+            }
+
+        }
+
+        if(e.getActionCommand()=="EnCode")
+        {
+            String encodeText = base64DEcode.getText();
+            if( encodeText.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                base64ENcode.setText(Base64CodeUtil.ENCode(encodeText));
+            }
+
+        }
+
+
+        if(e.getActionCommand()=="UdeCode")
+        {
+            String encodeText = UniENcode.getText();
+            if( encodeText.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                UniDEcode.setText(UniCodeUtil.DECode(encodeText));
+            }
+
+        }
+
+        if(e.getActionCommand()=="UenCode")
+        {
+            String encodeText = UniDEcode.getText();
+            if( encodeText.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                UniENcode.setText(UniCodeUtil.ENCode(encodeText));
+            }
+
+        }
+
 
 
 
@@ -244,7 +314,7 @@ public class MainUI extends JPanel implements ActionListener {
 
 
     // 字符串格式化
-    private JPanel createTab0Panel(){
+    private JPanel createTabStrFormatPanel(){
 
 
         JPanel panel = new JPanel(false);
@@ -286,10 +356,47 @@ public class MainUI extends JPanel implements ActionListener {
     }
 
 
+    // Base64 编码解码
+    private JPanel createTabBase64Panel(){
+
+        JPanel panel = new JPanel(false);
+        panel.setLayout(null);  // new GridLayout()
+
+        JLabel enTab = new JLabel("Base64编码:");
+        base64DEcode = new JTextField(10);
+        JButton btnZH = new JButton("DeCode");
+
+        JLabel deTab = new JLabel("Base64解码:");
+        base64ENcode = new JTextField(10);
+        JButton btnFZ = new JButton("EnCode");
+
+        // 设置监听
+        btnZH.addActionListener(this);
+        btnFZ.addActionListener(this);
+
+        panel.add(enTab);
+        panel.add(base64ENcode);
+        panel.add(btnZH);
+        panel.add(deTab);
+        panel.add(base64DEcode);
+        panel.add(btnFZ);
+
+        enTab.setBounds(30, 75, 100, 25);
+        base64ENcode.setBounds(120, 75, 160, 25);
+        btnZH.setBounds(290, 75, 78, 25);
+
+        deTab.setBounds(30, 120, 100, 25);
+        base64DEcode.setBounds(120, 120, 160, 25);
+        btnFZ.setBounds(290, 120, 78, 25);
+
+        return panel;
+    }
+
+
 
 
     // URL 编码解码
-    private JPanel createTab1Panel(){
+    private JPanel createTabUrlPanel(){
 
         JPanel panel = new JPanel(false);
         panel.setLayout(null);  // new GridLayout()
@@ -328,7 +435,7 @@ public class MainUI extends JPanel implements ActionListener {
 
 
     // unix时间戳转换
-    private JPanel createTab2Panel(){
+    private JPanel createTabUnixPanel(){
 
         JPanel panel = new JPanel(false);
         panel.setLayout(null);  // new GridLayout()
@@ -371,7 +478,7 @@ public class MainUI extends JPanel implements ActionListener {
 
 
     // 字符串长度
-    private JPanel createTab3Panel(){
+    private JPanel createTabStrLenPanel(){
 
         JPanel panel = new JPanel(false);
         panel.setLayout(null);  // new GridLayout()
@@ -394,6 +501,81 @@ public class MainUI extends JPanel implements ActionListener {
         return panel;
     }
 
+    // UniCode 编码解码
+    private JPanel createTabUniCodePanel(){
+
+        JPanel panel = new JPanel(false);
+        panel.setLayout(null);  // new GridLayout()
+
+        JLabel enTab = new JLabel("Unicode编码:");
+        UniDEcode = new JTextField(10);
+        JButton btnZH = new JButton("UdeCode");
+
+        JLabel deTab = new JLabel("Unicode解码:");
+        UniENcode = new JTextField(10);
+        JButton btnFZ = new JButton("UenCode");
+
+        // 设置监听
+        btnZH.addActionListener(this);
+        btnFZ.addActionListener(this);
+
+        panel.add(enTab);
+        panel.add(UniENcode);
+        panel.add(btnZH);
+        panel.add(deTab);
+        panel.add(UniDEcode);
+        panel.add(btnFZ);
+
+        enTab.setBounds(30, 75, 100, 25);
+        UniENcode.setBounds(110, 75, 160, 25);
+        btnZH.setBounds(280, 75, 85, 25);
+
+        deTab.setBounds(30, 120, 100, 25);
+        UniDEcode.setBounds(110, 120, 160, 25);
+        btnFZ.setBounds(280, 120, 85, 25);
+
+        return panel;
+    }
+
+    // 关于
+    private JPanel createTabAboutPanel(){
+
+        JPanel panel = new JPanel(false);
+        panel.setLayout(null);  // new GridLayout()
+
+
+        JLabel Use = new JLabel("集成常用测试开发工具，只为提供方便。");
+        JLabel Comment = new JLabel("人生没有白费的努力，也没有碰巧的成功。");
+        JLabel QQGroup = new JLabel("工具交流群：519288336");
+
+        JLabel Author = new JLabel("Author:");
+        JLabel AuthorInfo = new JLabel("Benjamin");
+
+        JLabel Email = new JLabel("Email:");
+        JLabel EmailInfo = new JLabel("Benjamin_v@qq.com");
+
+        panel.add(Use);
+        panel.add(Comment);
+        panel.add(QQGroup);
+
+        panel.add(Author);
+        panel.add(AuthorInfo);
+
+        panel.add(Email);
+        panel.add(EmailInfo);
+
+        Use.setBounds(60, 60, 250, 25);
+        Comment.setBounds(60, 90, 250, 25);
+        QQGroup.setBounds(60, 120, 250, 25);
+
+        Author.setBounds(60, 180, 100, 25);
+        AuthorInfo.setBounds(140, 180, 160, 25);
+
+        Email.setBounds(60, 210, 100, 25);
+        EmailInfo.setBounds(140, 210, 160, 25);
+
+        return panel;
+    }
 
 
 
