@@ -1,0 +1,676 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="keywords" content="移动测试,游戏测试,性能测试,软件测试,软件测试社区,软件测试资料,软件测试工具,软件测试报告,软件测试方法,自动化测试,软件测试招聘,">
+<meta name="description" content="TesterHome软件测试社区，人气最旺的软件测试技术门户，提供软件测试社区交流，测试沙龙。">
+<title>TesterHome</title>
+<link rel="icon" href="/assets/favicon-cd32144f74c18746f3dce33e1040e7dfe4c07c8e611e37f3868b1c16b5095da3.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/ios-icon-cd32144f74c18746f3dce33e1040e7dfe4c07c8e611e37f3868b1c16b5095da3.png">
+<link rel="shortcut icon" href="/assets/big_logo-cd32144f74c18746f3dce33e1040e7dfe4c07c8e611e37f3868b1c16b5095da3.png">
+<link rel="apple-touch-icon" href="/assets/favicon-cd32144f74c18746f3dce33e1040e7dfe4c07c8e611e37f3868b1c16b5095da3.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta content="True" name="HandheldFriendly">
+<link rel="alternate" type="application/rss+xml" title="订阅最新帖" href="https://testerhome.com/topics/feed">
+<link rel="stylesheet" media="screen" href="/assets/front-15185e3983cd68677b04329670c6a6b7fedecb51f1b39ff7fac48180c1850eaa.css" data-turbolinks-track="reload">
+<meta name="action-cable-url" content="/cable">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Zu0akTApATkbDxWBoexZ63uvWeu7Brt+VbEbwfG81t1MzRETEg5NVDCYLoxycruRkwL2HJnz1NcXmaAg2Vi08Q==">
+<meta itemprop="name" content="TesterHome">
+<meta itemprop="image" content="//10.url.cn/qqcourse_logo_ng/ajNVdqHZLLAH8YXbXMDFib2SnIqhac60vw3BspyLd0TO82PiaJ2xfbvXynrocic7ajbCGribAic88wgc/">
+<style type="text/css">.blog-description{  text-align: left;  padding: 18px;}.blog-description:first-letter {font-size : 200%;font-weight : bold;float : left;margin-right: 3px;}</style>
+<meta name="current-user" data-user-id="23222" data-user-login="Github-Benjamin" data-user-name="Benjamin" data-user-email="benjamin_v@qq.com" data-user-avatar-url="/uploads/user/avatar/23222/8b916f.png!md">
+<script src="/assets/app-04f83676fc1f6160a4410556b3298892a4536d9e8ee6c9b54df9191dd8dd9060.js" data-turbolinks-track="reload"></script>
+<div id="welcome-page" class="hide-page">
+ <div style="background-image: url(https://testerhome.com/uploads/photo/2019/971bc4ea-b6eb-4d64-b6a1-1e71928314af.jpg); background-position: top center; background-attachment: fixed; background-size: cover; background-repeat: no-repeat; height:100%"></div>
+ <div class="welcome-action-button">
+  <div class="btn-group">
+   <a id="welcome-page-skip" type="button" class="btn btn-primary">跳过</a>
+  </div>
+  <div class="btn-group">
+   <a href="http://2019.test-china.org/" type="button" class="btn btn-info">查看详情</a>
+  </div>
+ </div>
+</div>
+<div id="main-page">
+ <div class="header">
+  <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
+   <div class="container">
+    <div class="navbar-header" id="navbar-header" data-turbolinks-permanent>
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><span class="sr-only">Toggle</span><i class="fa fa-reorder"></i></button>
+     <a href="/" class="navbar-brand"><b>TesterHome</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="main-navbar-collapse">
+     <div id="main-nav-menu">
+      <ul class="nav navbar-nav">
+       <li class=""><a href="/topics">社区</a></li>
+       <li class=""><a href="/bugs">Bug 曝光台</a></li>
+       <li class=""><a href="/questions">问答</a></li>
+       <li class=""><a href="/teams">社团</a></li>
+       <li class=""><a href="/jobs">招聘</a></li>
+       <li class=""><a href="/wiki">Wiki</a></li>
+       <li class=""><a href="/opensource_projects">开源项目<span class="badge-new">新</span></a></li>
+      </ul>
+     </div>
+    </div>
+    <ul class="nav user-bar navbar-nav navbar-right">
+     <li class="dropdown dropdown-avatar"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="media-object avatar-32" src="/uploads/user/avatar/23222/8b916f.png!sm"><span class="caret"></span></a><button class="navbar-toggle" type="button" data-toggle="dropdown" role="button" aria-expanded="false"><span class="sr-only">Toggle</span><img class="media-object avatar-32" src="/uploads/user/avatar/23222/8b916f.png!sm"></button>
+      <ul class="dropdown-menu" role="menu">
+       <li class=""><a href="/Github-Benjamin">Github-Benjamin</a></li>
+       <li class="">
+        <div class="divider"></div></li>
+       <li class=""><a href="/setting">个人资料设置</a></li>
+       <li class=""><a href="/topics/favorites">我的收藏</a></li>
+       <li class=""><a href="/notes">记事本</a></li>
+       <li class="">
+        <div class="divider"></div></li>
+       <li class=""><a rel="nofollow" data-method="delete" href="/account/sign_out">退出</a></li>
+      </ul></li>
+    </ul>
+    <ul class="nav navbar-nav user-bar navbar-right">
+     <li class="nav-search hidden-xs hidden-sm hidden-md">
+      <form class="navbar-form form-search active" action="/search" method="GET">
+       <div class="form-group">
+        <input class="form-control" name="q" type="text" value="" placeholder="搜索本站内容">
+       </div>
+       <i class="fa btn-search fa-search"></i>
+      </form></li>
+     <li class="visible-xs"><a href="/topics/new" title="发布新话题"><i class="fa fa-edit"></i></a></li>
+     <li class="notification-count hidden-sm"><a href="/notifications" class="new" title="通知"><i class="fa fa-bell"></i><span class="count">11</span></a></li>
+     <li class="hidden-sm"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-plus"></i><span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+       <li class=""><a href="/topics/new">发布新话题</a></li>
+       <li class="">
+        <div class="divider"></div></li>
+       <li class=""><a href="/teams/new">创建公司／组织</a></li>
+      </ul></li>
+    </ul>
+   </div>
+  </nav>
+  <div id="corner" class="">
+   <a id="cornertip" href="">
+    <div id="c-content">
+     <div id="c-button">
+      欢迎
+     </div>
+    </div></a>
+  </div>
+ </div>
+ <div id="main" class="main-container container">
+  <div class="col-md-3 notifications notification-group-menu">
+   <div class="box">
+    <div class="list-group text-center">
+     <a href="/notifications/tsystem" class="list-group-item big no-pjax "><i class="text-md fa fa-bullhorn" aria-hidden="true"></i> &nbsp;系统</a>
+     <a href="/notifications/team" class="list-group-item big no-pjax "><i class="text-md fa fa-group" aria-hidden="true"></i> &nbsp;组织</a>
+     <a href="/notifications/personal" class="list-group-item big no-pjax  active "><i class="text-md fa fa-bell" aria-hidden="true"></i> &nbsp;个人<span class="badge badge-important"> 11</span></a>
+    </div>
+   </div>
+   <div id="notification-siderbar-advertise">
+    <div class="panel panel-default">
+     <div class="panel-heading">
+      <i class="fa fa-heart" style="color:red"></i> 活动提醒
+     </div>
+     <div class="panel-body">
+      <i class="fa fa-pencil"></i>
+      <a href="https://testerhome.com/topics/16506?source=notification-sider-bar"> 快来申请社区专栏~</a>
+      <hr>
+      <img width="18px" title=":revolving_hearts:" alt="💞" src="https://twemoji.b0.upaiyun.com/2/svg/1f49e.svg" class="twemoji">
+      <a href="https://testerhome.com/topics/18120"> 2019，你最关注的测试开发和质量管理技术主题有哪些？</a>
+      <hr>
+      <img width="18px" title=":revolving_hearts:" alt="🐷" src="https://twemoji.b0.upaiyun.com/2/svg/1f437.svg" class="twemoji">
+      <a href="https://testerhome.com/topics/17705"> 2019 中国移动互联网测试大会议题征集</a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="col-md-9">
+   <div class="notifications panel">
+    <div class="panel-heading hide-ios clearfix">
+     <i class="text-md fa fa-bell" aria-hidden="true"></i> 个人
+     <span class="pull-right"><a class="btn btn-sm btn-danger" id="btn-remove-all" data-remote="true" rel="nofollow" data-method="delete" href="/notifications/personal">清空</a></span>
+    </div>
+    <div class="panel-body list item-list">
+     <div class="notification-group">
+      <div class="group-title">
+       <i class="fa fa-clock-o"></i> 2019-05-04
+      </div>
+      <div id="notification-8109823" data-id="8109823" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="carl" class="user-avatar" href="/carl"><img src="/uploads/user/avatar/2562.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="如何用坐标定位非原生控件" href="/topics/19010#reply1">如何用坐标定位非原生控件</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>治本方法：</p>
+         <ol>
+          <li>相对坐标法，就是获取这个框，再根据手机分辨率，算出各个数字的百分比位置</li>
+          <li>图片识别，在识别时增加一个模糊参数，即匹配度达到70%以上就可以了，可以提高匹配的精度</li>
+         </ol>
+         <p>治标方法：</p>
+         <ol>
+          <li>不用键盘输入，尝试其他的输入方法，比如adb shell input text ，adb shell input keyevent 等</li>
+         </ol>
+        </div>
+       </div>
+       <div class="media-right">
+         11:43
+       </div>
+      </div>
+      <div id="notification-8109696" data-id="8109696" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="carl" class="user-avatar" href="/carl"><img src="/uploads/user/avatar/2562.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行" href="/topics/18811#reply11">[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>我试了一下，未达到并行执行的效果，它是串行的，我的测试代码如下：</p>
+         <pre class="highlight java"><code><span class="nd">@DataProvider</span><br><span class="kd">public</span><span class="n">Object</span><span class="o">[][]</span><span class="nf">getData</span><span class="o">()</span><span class="o">{</span><br><span class="n">Object</span><span class="o">[][]</span><span class="n">objects</span><span class="o">=</span><span class="k">new</span><span class="n">Object</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">];</span><br><span class="k">for</span><span class="o">(</span><span class="kt">int</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">objects</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span><span class="o">{</span><br><span class="k">for</span><span class="o">(</span><span class="kt">int</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">objects</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">length</span><span class="o">;</span><span class="n">j</span><span class="o">++)</span><span class="o">{</span><br><span class="n">objects</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="s">"-"</span><span class="o">+</span><span class="n">j</span><span class="o">;</span><br><span class="o">}</span><br><span class="o">}</span><br><span class="k">return</span><span class="n">objects</span><span class="o">;</span><br><span class="o">}</span><br><br><span class="nd">@Test</span><span class="o">(</span><span class="n">dataProvider</span><span class="o">=</span><span class="s">"getData"</span><span class="o">,</span><span class="n">threadPoolSize</span><span class="o">=</span><span class="mi">4</span><span class="o">)</span><br><span class="kd">public</span><span class="kt">void</span><span class="nf">runData</span><span class="o">(</span><span class="n">Object</span><span class="o">...</span><span class="n">objects</span><span class="o">)</span><span class="o">{</span><br><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">());</span><br><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span><br><span class="k">for</span><span class="o">(</span><span class="kt">int</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">objects</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span><span class="o">{</span><br><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">objects</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span><br><span class="n">ThreadUtils</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span><br><span class="o">}</span><br><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span><br><span class="o">}</span><br></code></pre>
+        </div>
+       </div>
+       <div class="media-right">
+         11:14
+       </div>
+      </div>
+     </div>
+     <div class="notification-group">
+      <div class="group-title">
+       <i class="fa fa-clock-o"></i> 2019-04-30
+      </div>
+      <div id="notification-8091715" data-id="8091715" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="carl" class="user-avatar" href="/carl"><img src="/uploads/user/avatar/2562.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行" href="/topics/18811#reply9">[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>嗯，之前有想过，忘记为啥没去试这条路了<img title=":sweat_smile:" alt="😅" src="https://twemoji.b0.upaiyun.com/2/svg/1f605.svg" class="twemoji"></p>
+        </div>
+       </div>
+       <div class="media-right">
+         15:13
+       </div>
+      </div>
+      <div id="notification-8090170" data-id="8090170" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="ycwdaaaa" class="user-avatar" href="/ycwdaaaa"><img src="/uploads/user/avatar/7606.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="selenium 定位问题" href="/topics/19001#reply5">selenium 定位问题</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>是不是不在一个frame里？可以下载一个在浏览器上使用xpath搜寻控件的插件试试</p>
+        </div>
+       </div>
+       <div class="media-right">
+         15:06
+       </div>
+      </div>
+      <div id="notification-8089641" data-id="8089641" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="carl" class="user-avatar" href="/carl"><img src="/uploads/user/avatar/2562.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行" href="/topics/18811#reply7">[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>嗯，你说的对，在本例中，并没有使用到动态代理的特性，去增加前置、后置、或环绕什么的方法，准确来说是动态生成了一个子类。<br>多线程来实现是指下面这个参数吗？从注解来看，是跑这个方法多次</p>
+         <pre class="highlight java"><code><span class="kd">public</span><span class="nd">@interface</span><span class="n">Test</span><span class="o">{</span><br><span class="cm"></span><br><span class="kd">public</span><span class="kt">int</span><span class="nf">threadPoolSize</span><span class="o">()</span><span class="k">default</span><span class="mi">0</span><span class="o">;</span><br><span class="o">}</span><br></code></pre>
+        </div>
+       </div>
+       <div class="media-right">
+         14:45
+       </div>
+      </div>
+      <div id="notification-8089292" data-id="8089292" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="carl" class="user-avatar" href="/carl"><img src="/uploads/user/avatar/2562.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行" href="/topics/18811#reply5">[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>噢？说说看，怎么用的？我学习下</p>
+        </div>
+       </div>
+       <div class="media-right">
+         11:20
+       </div>
+      </div>
+      <div id="notification-8089137" data-id="8089137" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="carl" class="user-avatar" href="/carl"><img src="/uploads/user/avatar/2562.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行" href="/topics/18811#reply3">[testNG][Javassist] 借助 javassist 动态生成测试类，以同时执行</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>这位大神，你在讲什么？</p>
+        </div>
+       </div>
+       <div class="media-right">
+         11:13
+       </div>
+      </div>
+      <div id="notification-8085864" data-id="8085864" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[文末有 ppt ] 2019 TesterHome 广州第一期沙龙圆满结束！" href="/topics/18974#reply11">[文末有 ppt ] 2019 TesterHome 广州第一期沙龙圆满结束！</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>4月初开始报名的，报名帖置顶半个多月了</p>
+         <p>后续可以多留意置顶帖和公众号信息，主要通过这2个渠道宣传</p>
+        </div>
+       </div>
+       <div class="media-right">
+         08:37
+       </div>
+      </div>
+      <div id="notification-8085162" data-id="8085162" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[文末有 ppt ] 2019 TesterHome 广州第一期沙龙圆满结束！" href="/topics/18974#reply10">[文末有 ppt ] 2019 TesterHome 广州第一期沙龙圆满结束！</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>正解。目前是这样的</p>
+         <p>现在业务同学也有提出一些想法把第一次要人工验证的工作量减少，正在在一起优化。后续有好的落地再分享出来</p>
+        </div>
+       </div>
+       <div class="media-right">
+         08:34
+       </div>
+      </div>
+     </div>
+     <div class="notification-group">
+      <div class="group-title">
+       <i class="fa fa-clock-o"></i> 2019-04-29
+      </div>
+      <div id="notification-8074987" data-id="8074987" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="anonymous" class="user-avatar" href="/anonymous"><img src="/uploads/user/avatar/12.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="该求职系统测试还是测试开发呢？" href="/topics/18848#reply1">该求职系统测试还是测试开发呢？</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>niming</p>
+        </div>
+       </div>
+       <div class="media-right">
+         09:15
+       </div>
+      </div>
+     </div>
+     <div class="notification-group">
+      <div class="group-title">
+       <i class="fa fa-clock-o"></i> 2019-04-27
+      </div>
+      <div id="notification-8068134" data-id="8068134" class="media notification notification-topic">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          创建了帖子
+         <a title="[文末有 ppt ] 2019 TesterHome 广州第一期沙龙圆满结束！" href="/topics/18974">[文末有 ppt ] 2019 TesterHome 广州第一期沙龙圆满结束！</a>
+        </div>
+       </div>
+       <div class="media-right">
+         21:42
+       </div>
+      </div>
+     </div>
+     <div class="notification-group">
+      <div class="group-title">
+       <i class="fa fa-clock-o"></i> 2019-04-26
+      </div>
+      <div id="notification-8052508" data-id="8052508" class="media notification notification-mention">
+       <div class="media-left">
+        <a title="shuaimingming" class="user-avatar" href="/shuaimingming"><img src="/uploads/user/avatar/42746/53cbf6.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+         <span class="info">在<a title="请教下各位测试开发前辈" href="/topics/18862">请教下各位测试开发前辈</a> 提及你：</span>
+        </div>
+        <div class="media-content summary markdown">
+         <p>我公司是个200人的小公司，测试领导2个，测试工程师5个，全是做功能测试的，连jmeter怎么用都不知道，Linux命令也不知道，太low了，学不到很深的东西</p>
+        </div>
+       </div>
+       <div class="media-right">
+         15:40
+       </div>
+      </div>
+      <div id="notification-8049468" data-id="8049468" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="用了那么多 UI 自动化框架，为什么没有人尝试直接用 js 来做呢？" href="/topics/18918#reply13">用了那么多 UI 自动化框架，为什么没有人尝试直接用 js 来做呢？</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>建议楼主做个 demo 出来分享下，这样讨论起来也更具体？</p>
+        </div>
+       </div>
+       <div class="media-right">
+         07:42
+       </div>
+      </div>
+     </div>
+     <div class="notification-group">
+      <div class="group-title">
+       <i class="fa fa-clock-o"></i> 2019-04-25
+      </div>
+      <div id="notification-8047751" data-id="8047751" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[广州][PPmoney] 诚聘测试工程师、测试开发工程师" href="/topics/18864#reply10">[广州][PPmoney] 诚聘测试工程师、测试开发工程师</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>来来来~</p>
+        </div>
+       </div>
+       <div class="media-right">
+         23:41
+       </div>
+      </div>
+      <div id="notification-8047051" data-id="8047051" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[广州][PPmoney] 诚聘测试工程师、测试开发工程师" href="/topics/18864#reply9">[广州][PPmoney] 诚聘测试工程师、测试开发工程师</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>如果对你的测试能力有自信，可以试试投测试工程师。</p>
+        </div>
+       </div>
+       <div class="media-right">
+         23:41
+       </div>
+      </div>
+      <div id="notification-8046351" data-id="8046351" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[广州][PPmoney] 诚聘测试工程师、测试开发工程师" href="/topics/18864#reply8">[广州][PPmoney] 诚聘测试工程师、测试开发工程师</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>如果能力突出，学历要求可以适当降低。</p>
+        </div>
+       </div>
+       <div class="media-right">
+         23:41
+       </div>
+      </div>
+      <div id="notification-8045650" data-id="8045650" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="用 Python 写了测试脚本，但一直在报错：TypeError: __init__() missing 2 required positional arguments: 'b' and 'expected'" href="/topics/18938#reply2">用 Python 写了测试脚本，但一直在报错：TypeError: __init__() missing 2 required positional arguments: 'b' and 'expected'</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>可以把整个项目上传 github 后，把 github 地址发下不？</p>
+         <p>代码太多了，看起来比较费劲，而且好像不是很全。</p>
+         <p>光从图片上看，我估计是由于 TestAdd 这个类重写了 unittest.TestCase 的<strong>init</strong> 方法引起的。倒不是说重写这种方式不对，但它的重写里做了2个和父类方法不同的修改：<br>1、父类原来是一个 method_name 是第一个参数，重写后变成了最后一个参数<br>2、父类的 method_name 是可选参数，会有 'runTest' 这个默认值，但子类继承后变成了4个必须参数</p>
+         <p>因此，用调用父类的初始化方法一样的方式去调用子类，是调不通的。从你堆栈上看，你用的是 pycharm 自带的 runner ，而非你代码里用的 HtmlTestRunner ，自带的 runner 估计按照 unittest.TestCase 的写法，只传了一个参数，不满足子类重写后要求传4个参数的要求，所以报错信息里会说少了后面3个参数。</p>
+         <p>如果要更正让它兼容，可以试试<br>1、 TestAdd 里面的<code>def __init__(self, a, b, expected, MethodName):</code> 换成<code>def __init__(self, MethodName='runTest', a=None, b=None, expected=None)</code> ，<br>2、执行类中的用例初始化方法从<code>TestAdd(item[0], item[1], item[2], 'add')</code> 改为<code>TestAdd(a=item[0], b=item[1], expected=item[2], MethodName='add')</code></p>
+         <p>PS：不知道你学习的是什么课程，但这种继承 unittest.TestCase 后改写<strong>init</strong> 方法并且参数数量、位置不一样的写法，还是第一次见，应该是属于一种不大专业的写法，而且参数名用了首字母大写的驼峰命名，也不符合 python 的专业命名方法（全部字母小写且用下划线分隔）。基于 unittest.TestCase 做扩展应该用类似于<a href="https://blog.csdn.net/qq_41963758/article/details/80366507" rel="nofollow" target="_blank">https://blog.csdn.net/qq_41963758/article/details/80366507</a> 里面的方法，只增加可选参数，不增加或改变必须参数，这样才能保证对父类的操作对子类也继续适用。</p>
+        </div>
+       </div>
+       <div class="media-right">
+         23:05
+       </div>
+      </div>
+      <div id="notification-8036628" data-id="8036628" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="success" class="user-avatar" href="/success"><img src="/uploads/user/avatar/7064.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="一招让 IOS 自动化化快的飞起" href="/topics/16055#reply59">一招让 IOS 自动化化快的飞起</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>我这边没有点击的操作啊。你版本多少？</p>
+        </div>
+       </div>
+       <div class="media-right">
+         14:58
+       </div>
+      </div>
+      <div id="notification-8035264" data-id="8035264" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[广州][PPmoney] 诚聘测试工程师、测试开发工程师" href="/topics/18864#reply4">[广州][PPmoney] 诚聘测试工程师、测试开发工程师</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>可能比不上北上深，但在广州来说，是比较有竞争力的水平了。</p>
+        </div>
+       </div>
+       <div class="media-right">
+         09:49
+       </div>
+      </div>
+      <div id="notification-8034564" data-id="8034564" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="[广州][PPmoney] 诚聘测试工程师、测试开发工程师" href="/topics/18864#reply3">[广州][PPmoney] 诚聘测试工程师、测试开发工程师</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>是呀，现在在 ppmoney 。有兴趣过来不？</p>
+        </div>
+       </div>
+       <div class="media-right">
+         09:48
+       </div>
+      </div>
+      <div id="notification-8033818" data-id="8033818" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="求助一波，针对于系统权限的测试大家有没有什么好的测试方案" href="/topics/18887#reply2">求助一波，针对于系统权限的测试大家有没有什么好的测试方案</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>可以考虑下 了解系统设计+ review 代码+抽样测试？</p>
+         <p>例如开发用的是 spring security 之类的成熟工具，写很少代码+配置就可以完成权限配置，与其遍历，不如直接看配置+抽几个不同权限不同的测试。</p>
+        </div>
+       </div>
+       <div class="media-right">
+         07:54
+       </div>
+      </div>
+      <div id="notification-8033118" data-id="8033118" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="input_data.py 代码" href="/topics/18906#reply1">input_data.py 代码</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>所以这是提问贴还是分享贴？</p>
+        </div>
+       </div>
+       <div class="media-right">
+         07:46
+       </div>
+      </div>
+      <div id="notification-8032418" data-id="8032418" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="chenhengjie123" class="user-avatar" href="/chenhengjie123"><img src="/uploads/user/avatar/605.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="用 docker 搭建测试环境，想用 mysql 实现测试数据和 case 分离，应该怎么做？" href="/topics/18905#reply2">用 docker 搭建测试环境，想用 mysql 实现测试数据和 case 分离，应该怎么做？</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>这个要结合业务看。</p>
+         <p>1、如果数据不复杂，写死可以满足，可以直接用你说的方法。简单高效。<br>2、常说的数据与用例分离，数据指的是用例中的数据(如接口测试中的 request、response)，不是被测系统中的数据。如果用 java 可以了解下 testng 的 dataprovider</p>
+        </div>
+       </div>
+       <div class="media-right">
+         07:45
+       </div>
+      </div>
+     </div>
+     <div class="notification-group">
+      <div class="group-title">
+       <i class="fa fa-clock-o"></i> 2019-04-24
+      </div>
+      <div id="notification-8026620" data-id="8026620" class="media notification notification-topic_reply">
+       <div class="media-left">
+        <a title="Lihuazhang" class="user-avatar" href="/Lihuazhang"><img src="/uploads/user/avatar/110.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          在帖子
+         <a title="我想请教下各位前辈，高级测试开发工程师需要考证吗？" href="/topics/18891#reply5">我想请教下各位前辈，高级测试开发工程师需要考证吗？</a> 留言了：
+        </div>
+        <div class="media-content summary markdown">
+         <p>业务理解能力吧。脱离业务，都是空谈。</p>
+        </div>
+       </div>
+       <div class="media-right">
+         14:46
+       </div>
+      </div>
+      <div id="notification-8026225" data-id="8026225" class="media notification notification-topic">
+       <div class="media-left">
+        <a title="anonymous" class="user-avatar" href="/anonymous"><img src="/uploads/user/avatar/12.jpg!lg"></a>
+       </div>
+       <div class="media-body">
+        <div class="media-heading">
+          创建了帖子
+         <a title="短期工作经历要不要写在简历上" href="/topics/18897">短期工作经历要不要写在简历上</a>
+        </div>
+       </div>
+       <div class="media-right">
+         13:54
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="panel-footer hide-ios">
+     <ul class="pagination">
+      <li class="active"><a remote="false">1</a></li>
+      <li><a rel="next" href="/notifications/personal?page=2">2</a></li>
+      <li><a href="/notifications/personal?page=3">3</a></li>
+      <li><a href="/notifications/personal?page=4">4</a></li>
+      <li class="next"><a rel="next" href="/notifications/personal?page=2">下一页<i class="fa fa-angle-right"></i></a></li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <footer class="footer" id="footer" data-turbolinks-permanent>
+  <div class="container">
+   <div class="row">
+    <div class="col-sm-9">
+     <div class="media">
+      <div class="media-left">
+       <img src="https://testerhome.com/uploads/photo/2016/274e7ebc8ad0db0b7e718fceea3628a9.png!large" style="width:48px;">
+      </div>
+      <div class="media-body">
+       <div class="links">
+        <a href="https://testerhome.com/wiki/about">关于</a> /
+        <a href="https://testerhome.com/users">活跃用户</a> /
+        <a href="http://test-china.org/" target="_blank">中国移动互联网测试技术大会</a> /
+        <a href="/topics/node13">反馈</a> /
+        <a href="https://github.com/testerhome">Github</a> /
+        <a href="https://testerhome.com//api-doc/">API</a> /
+        <a href="/wiki/spreadtesterhome">帮助推广</a>
+       </div>
+       <div class="copyright" style="font-size:14px; color:#9CA4A9;margin-top:0px;margin-bottom:5px">
+         TesterHome 移动测试社区，由众多移动测试工作者维护，致力于推进国内测试技术。Inspired by RubyChina
+       </div>
+       <div class="links" data-no-turbolink="">
+        <span style="font-size:14px; color:#666;">友情链接</span>
+        <span style="margin-left:5px"><a style="color:#317DDA;" href="http://wetest.qq.com/?from=links_testerhome" target="_blank">WeTest腾讯质量开放平台</a> /<a style="color:#317DDA;" href="http://www.infoq.com/cn" target="_blank">InfoQ</a> /<a style="color:#317DDA;" href="http://www.testtao.com/portal.php" target="_blank">测试之道</a> /<a style="color:#317DDA;" href="https://www.testwo.com/" target="_blank">测试窝</a> /<a style="color:#317DDA;" href="http://tieba.baidu.com/f?ie=utf-8&amp;kw=%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95&amp;fr=search" target="_blank">百度测试吧</a> /<a style="color:#317DDA;" href="http://www.itdks.com/" target="_blank">IT大咖说</a></span>
+       </div>
+       <div class="links" style="margin-top:0px" data-no-turbolink="">
+        <a href="?locale=zh-CN" rel="nofollow">简体中文</a> /
+        <a href="?locale=zh-TW" rel="nofollow">正體中文</a> /
+        <a href="?locale=en" rel="nofollow">English</a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="col-sm-3 friends">
+     <a href="http://www.ucloud.cn/?utm_source=zanzhu&amp;utm_campaign=testerhome&amp;utm_medium=display&amp;utm_content=yejiao&amp;ytag=testerhome_logo" target="_blank" rel="twipsy" style="display:inline-block;margin-right:5px;" data-original-title="本站服务器由 Ucloud 赞助"><img src="https://testerhome.com/photo/2016/4ce97c93f9433f654884c4839408327a.png" style="height:28px"></a>
+     <a href="http://www.sendcloud.net/" target="_blank" rel="twipsy" style="display:inline-block;margin-right:5px;" data-original-title="邮件服务由 SendCloud 赞助"><img src="https://testerhome.com/uploads/photo/2017/0f9fb5db-2472-4430-9f7e-6c051f28c3c9.png" style="height:28px"></a>
+    </div>
+   </div>
+  </div>
+ </footer>
+ <script type="text/javascript" data-turbolinks-eval="false">    App.root_url = "https://testerhome.com/";    App.asset_url = "";    App.twemoji_url = "https://twemoji.b0.upaiyun.com/2";    App.locale = "zh-CN";    App.current_user_id = 23222;</script>
+ <script>    ga('create', 'UA-45014075-1', 'auto');    ga('require', 'displayfeatures');    ga('send', 'pageview');</script>
+ <div class="zoom-overlay"></div>
+</div>

@@ -19,7 +19,7 @@ public class MainUI extends JPanel implements ActionListener {
 
     JTextField unixText,bjText,urlDEcode,urlENcode,base64DEcode,base64ENcode,UniDEcode,UniENcode;
     JTextArea  lenText,formatStrText;
-    JRadioButton JsonSelect,XmlSelect;
+    JRadioButton JsonSelect,XmlSelect,HtmlSelect;
 
 
     public MainUI()
@@ -139,10 +139,6 @@ public class MainUI extends JPanel implements ActionListener {
 
 
 
-
-
-
-
     // 事件判断
     public void actionPerformed(ActionEvent e) {
 
@@ -175,6 +171,12 @@ public class MainUI extends JPanel implements ActionListener {
                         return;
                     }
 
+                }else if (HtmlSelect.isSelected())
+                {
+                    String HtmlData  = HtmlUtil.Format(formatStr);
+                    TxtFileUtil.WriteStringToFile("HTML",nowTIme,HtmlData);
+                    JOptionPane.showMessageDialog(null,String.format("Create HTML File Success\nPlease Check: HTML%s:.txt",nowTIme),"提示消息",JOptionPane.INFORMATION_MESSAGE);
+                    return;
                 }
             }
 
@@ -323,11 +325,14 @@ public class MainUI extends JPanel implements ActionListener {
         JLabel selectTab = new JLabel("格式选择:");
         JsonSelect = new JRadioButton("JSON");
         XmlSelect = new JRadioButton("XML");
+        HtmlSelect = new JRadioButton("HTML");
         ButtonGroup bg = new ButtonGroup();
         bg.add(JsonSelect);
         bg.add(XmlSelect);
+        bg.add(HtmlSelect);
         JsonSelect.setSelected(true);
         XmlSelect.setSelected(false);
+        HtmlSelect.setSelected(false);
 
 
         JLabel strTab = new JLabel("字符串:");
@@ -339,6 +344,7 @@ public class MainUI extends JPanel implements ActionListener {
         panel.add(selectTab);
         panel.add(JsonSelect);
         panel.add(XmlSelect);
+        panel.add(HtmlSelect);
         panel.add(strTab);
         panel.add(formatStrText);
         panel.add(btnSubmit);
@@ -346,7 +352,8 @@ public class MainUI extends JPanel implements ActionListener {
 
         selectTab.setBounds(15, 15, 60, 25);
         JsonSelect.setBounds(75, 15, 60, 25);
-        XmlSelect.setBounds(145, 15, 100, 25);
+        XmlSelect.setBounds(135, 15, 60, 25);
+        HtmlSelect.setBounds(191, 15, 60, 25);
         strTab.setBounds(15, 50, 100, 25);
         formatStrText.setBounds(80, 50, 300, 200);
         btnSubmit.setBounds(160, 260, 100, 25);
@@ -544,7 +551,7 @@ public class MainUI extends JPanel implements ActionListener {
         panel.setLayout(null);  // new GridLayout()
 
 
-        JLabel Use = new JLabel("集成常用测试开发工具，只为提供方便。");
+//        JLabel Use = new JLabel("集成常用测试开发工具，只为提供方便。");
         JLabel Comment = new JLabel("人生没有白费的努力，也没有碰巧的成功。");
         JLabel QQGroup = new JLabel("工具交流群：519288336");
 
@@ -554,7 +561,7 @@ public class MainUI extends JPanel implements ActionListener {
         JLabel Email = new JLabel("Email:");
         JLabel EmailInfo = new JLabel("Benjamin_v@qq.com");
 
-        panel.add(Use);
+//        panel.add(Use);
         panel.add(Comment);
         panel.add(QQGroup);
 
@@ -564,7 +571,7 @@ public class MainUI extends JPanel implements ActionListener {
         panel.add(Email);
         panel.add(EmailInfo);
 
-        Use.setBounds(60, 60, 250, 25);
+//        Use.setBounds(60, 60, 250, 25);
         Comment.setBounds(60, 90, 250, 25);
         QQGroup.setBounds(60, 120, 250, 25);
 
