@@ -1,9 +1,7 @@
 /**
  * Created by Benjamin on 2019/4/29.
  */
-import Utils.GetTimeUtil;
-import Utils.StringLenUtil;
-import Utils.UrlCodeUtil;
+import Utils.*;
 
 import java.awt.BorderLayout;
 
@@ -20,7 +18,8 @@ import javax.swing.*;
 public class MainUI extends JPanel implements ActionListener {
 
     JTextField unixText,bjText,urlDEcode,urlENcode;
-    JTextArea  lenText;
+    JTextArea  lenText,formatStrText;
+    JRadioButton JsonSelect,XmlSelect;
 
 
     public MainUI()
@@ -35,9 +34,9 @@ public class MainUI extends JPanel implements ActionListener {
         ImageIcon ii = createImageIcon("images/middle.gif");
 
         //创建第一个标签下的panel
-        JPanel panel0 = createPanel("panel0");
+        JPanel panel0 = createTab0Panel();
         //指定标签名，标签图标，panel，和提示信息
-        tp.addTab("panel0",ii,panel0,"do noting");
+        tp.addTab("字符串格式",ii,panel0,"do noting");
         //设置标签的快捷键
         tp.setMnemonicAt(0, KeyEvent.VK_0);
 
@@ -137,6 +136,31 @@ public class MainUI extends JPanel implements ActionListener {
     // 事件判断
     public void actionPerformed(ActionEvent e) {
 
+
+
+        if(e.getActionCommand()=="格式化")
+        {
+            String formatStr = formatStrText.getText();
+            if( formatStr.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                // 选中字符串格式化
+                if(JsonSelect.isSelected())
+                {
+                    String JsonData  = JsonUtil.JsonFormat(formatStr);
+                    TxtFileUtil.WriteStringToFile("JSON",JsonData);
+                }else if(XmlSelect.isSelected())
+                {
+                    String XmlData  = XmlUtil.Format(formatStr);
+                    TxtFileUtil.WriteStringToFile("XML",XmlData);
+                }
+            }
+
+        }
+
+
+
         if(e.getActionCommand()=="转换")
         {
             String unixTime = unixText.getText();
@@ -218,17 +242,63 @@ public class MainUI extends JPanel implements ActionListener {
 
     }
 
+
+    // 字符串格式化
+    private JPanel createTab0Panel(){
+
+
+        JPanel panel = new JPanel(false);
+        panel.setLayout(null);  // new GridLayout()
+
+        JLabel selectTab = new JLabel("格式选择:");
+        JsonSelect = new JRadioButton("JSON");
+        XmlSelect = new JRadioButton("XML");
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(JsonSelect);
+        bg.add(XmlSelect);
+        JsonSelect.setSelected(true);
+        XmlSelect.setSelected(false);
+
+
+        JLabel strTab = new JLabel("字符串:");
+        formatStrText = new JTextArea (3, 10);
+
+        JButton btnSubmit = new JButton("格式化");
+        btnSubmit.addActionListener(this);
+
+        panel.add(selectTab);
+        panel.add(JsonSelect);
+        panel.add(XmlSelect);
+        panel.add(strTab);
+        panel.add(formatStrText);
+        panel.add(btnSubmit);
+
+
+        selectTab.setBounds(15, 15, 60, 25);
+        JsonSelect.setBounds(75, 15, 60, 25);
+        XmlSelect.setBounds(145, 15, 100, 25);
+        strTab.setBounds(15, 50, 100, 25);
+        formatStrText.setBounds(80, 50, 300, 200);
+        btnSubmit.setBounds(160, 260, 100, 25);
+
+        return panel;
+
+    }
+
+
+
+
     // URL 编码解码
     private JPanel createTab1Panel(){
 
         JPanel panel = new JPanel(false);
         panel.setLayout(null);  // new GridLayout()
 
-        JLabel unixTab = new JLabel("URL编码:");
+        JLabel enTab = new JLabel("URL编码:");
         urlENcode = new JTextField(10);
         JButton btnZH = new JButton("解码");
 
-        JLabel bjTab = new JLabel("URL解码:");
+        JLabel deTab = new JLabel("URL解码:");
         urlDEcode = new JTextField(10);
         JButton btnFZ = new JButton("编码");
 
@@ -236,18 +306,18 @@ public class MainUI extends JPanel implements ActionListener {
         btnZH.addActionListener(this);
         btnFZ.addActionListener(this);
 
-        panel.add(unixTab);
+        panel.add(enTab);
         panel.add(urlENcode);
         panel.add(btnZH);
-        panel.add(bjTab);
+        panel.add(deTab);
         panel.add(urlDEcode);
         panel.add(btnFZ);
 
-        unixTab.setBounds(50, 75, 100, 25);
+        enTab.setBounds(50, 75, 100, 25);
         urlENcode.setBounds(130, 75, 160, 25);
         btnZH.setBounds(300, 75, 60, 25);
 
-        bjTab.setBounds(50, 120, 100, 25);
+        deTab.setBounds(50, 120, 100, 25);
         urlDEcode.setBounds(130, 120, 160, 25);
         btnFZ.setBounds(300, 120, 60, 25);
 
@@ -299,23 +369,24 @@ public class MainUI extends JPanel implements ActionListener {
         return panel;
     }
 
+
     // 字符串长度
     private JPanel createTab3Panel(){
 
         JPanel panel = new JPanel(false);
         panel.setLayout(null);  // new GridLayout()
 
-        JLabel unixTab = new JLabel("字符串:");
+        JLabel strTab = new JLabel("字符串:");
         lenText = new JTextArea (3, 10);
 
         JButton btnSubmit = new JButton("获取长度");
         btnSubmit.addActionListener(this);
 
-        panel.add(unixTab);
+        panel.add(strTab);
         panel.add(lenText);
         panel.add(btnSubmit);
 
-        unixTab.setBounds(30, 20, 100, 25);
+        strTab.setBounds(30, 20, 100, 25);
         lenText.setBounds(80, 20, 300, 200);
 
         btnSubmit.setBounds(160, 230, 100, 25);
