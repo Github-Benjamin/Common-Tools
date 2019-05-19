@@ -183,6 +183,45 @@ public class MainUI extends JPanel implements ActionListener {
         }
 
 
+        if(e.getActionCommand()=="压缩")
+        {
+            String formatStr = formatStrText.getText();
+            if( formatStr.isEmpty()){
+                JOptionPane.showMessageDialog(null,"数据为空！","提示消息",JOptionPane.WARNING_MESSAGE);
+                return;
+            }else {
+                // 选中字符串格式化
+                String nowTIme = GetTimeUtil.GetNowTimeStamp();
+                if(JsonSelect.isSelected())
+                {
+                    String JsonRar  = RarString.RarString(formatStr);
+                    TxtFileUtil.WriteStringToFile("JSON",nowTIme,JsonRar);
+                    JOptionPane.showMessageDialog(null,String.format("Create JSON File Success\nPlease Check: JSON%s:.txt",nowTIme),"提示消息",JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }else if(XmlSelect.isSelected())
+                {
+                    try {
+                        String XmlRar  = RarString.RarString(formatStr);
+                        TxtFileUtil.WriteStringToFile("XML",nowTIme,XmlRar);
+                        JOptionPane.showMessageDialog(null,String.format("Create XML File Success\nPlease Check: XML%s:.txt",nowTIme),"提示消息",JOptionPane.INFORMATION_MESSAGE);
+                        return;
+                    }catch (Exception a){
+                        JOptionPane.showMessageDialog(null,"Create XML File Failed\nPlease Check XML DATA","提示消息",JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
+                }else if (HtmlSelect.isSelected())
+                {
+                    String HtmlRar  = RarString.RarString(formatStr);
+                    TxtFileUtil.WriteStringToFile("HTML",nowTIme,HtmlRar);
+                    JOptionPane.showMessageDialog(null,String.format("Create HTML File Success\nPlease Check: HTML%s:.txt",nowTIme),"提示消息",JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
+            }
+
+        }
+
+
 
         if(e.getActionCommand()=="转换")
         {
@@ -339,7 +378,10 @@ public class MainUI extends JPanel implements ActionListener {
         formatStrText = new JTextArea (3, 10);
 
         JButton btnSubmit = new JButton("格式化");
+        JButton rarSubmit = new JButton("压缩");
+
         btnSubmit.addActionListener(this);
+        rarSubmit.addActionListener(this);
 
         panel.add(selectTab);
         panel.add(JsonSelect);
@@ -348,7 +390,7 @@ public class MainUI extends JPanel implements ActionListener {
         panel.add(strTab);
         panel.add(formatStrText);
         panel.add(btnSubmit);
-
+        panel.add(rarSubmit);
 
         selectTab.setBounds(15, 15, 60, 25);
         JsonSelect.setBounds(75, 15, 60, 25);
@@ -356,7 +398,8 @@ public class MainUI extends JPanel implements ActionListener {
         HtmlSelect.setBounds(191, 15, 60, 25);
         strTab.setBounds(15, 50, 100, 25);
         formatStrText.setBounds(80, 50, 300, 200);
-        btnSubmit.setBounds(160, 260, 100, 25);
+        btnSubmit.setBounds(80, 260, 100, 25);
+        rarSubmit.setBounds(220, 260, 100, 25);
 
         return panel;
 
@@ -553,7 +596,7 @@ public class MainUI extends JPanel implements ActionListener {
 
 //        JLabel Use = new JLabel("集成常用测试开发工具，只为提供方便。");
         JLabel Comment = new JLabel("人生没有白费的努力，也没有碰巧的成功。");
-        JLabel QQGroup = new JLabel("工具交流群：519288336");
+//        JLabel QQGroup = new JLabel("工具交流群：519288336");
 
         JLabel Author = new JLabel("Author:");
         JLabel AuthorInfo = new JLabel("Benjamin");
@@ -563,7 +606,7 @@ public class MainUI extends JPanel implements ActionListener {
 
 //        panel.add(Use);
         panel.add(Comment);
-        panel.add(QQGroup);
+//        panel.add(QQGroup);
 
         panel.add(Author);
         panel.add(AuthorInfo);
@@ -573,7 +616,7 @@ public class MainUI extends JPanel implements ActionListener {
 
 //        Use.setBounds(60, 60, 250, 25);
         Comment.setBounds(60, 90, 250, 25);
-        QQGroup.setBounds(60, 120, 250, 25);
+//        QQGroup.setBounds(60, 120, 250, 25);
 
         Author.setBounds(60, 180, 100, 25);
         AuthorInfo.setBounds(140, 180, 160, 25);
