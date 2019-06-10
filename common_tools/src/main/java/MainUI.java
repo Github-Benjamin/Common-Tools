@@ -155,7 +155,7 @@ public class MainUI extends JPanel implements ActionListener {
                 String nowTIme = GetTimeUtil.GetNowTimeStamp();
                 if(JsonSelect.isSelected())
                 {
-                    String JsonData  = JsonUtil.JsonFormat(formatStr);
+                    String JsonData  = JsonUtil.toPrettyFormat(formatStr);
                     TxtFileUtil.WriteStringToFile("JSON",nowTIme,JsonData);
                     JOptionPane.showMessageDialog(null,String.format("Create JSON File Success\nPlease Check: JSON%s:.txt",nowTIme),"提示消息",JOptionPane.INFORMATION_MESSAGE);
                     return;
@@ -349,14 +349,11 @@ public class MainUI extends JPanel implements ActionListener {
         }
 
 
-
-
     }
 
 
     // 字符串格式化
     private JPanel createTabStrFormatPanel(){
-
 
         JPanel panel = new JPanel(false);
         panel.setLayout(null);  // new GridLayout()
@@ -376,6 +373,8 @@ public class MainUI extends JPanel implements ActionListener {
 
         JLabel strTab = new JLabel("字符串:");
         formatStrText = new JTextArea (3, 10);
+        JScrollPane scrollPanel = new JScrollPane();
+        scrollPanel.setViewportView(formatStrText);
 
         JButton btnSubmit = new JButton("格式化");
         JButton rarSubmit = new JButton("压缩");
@@ -388,18 +387,22 @@ public class MainUI extends JPanel implements ActionListener {
         panel.add(XmlSelect);
         panel.add(HtmlSelect);
         panel.add(strTab);
-        panel.add(formatStrText);
+        panel.add(scrollPanel);
+//        panel.add(formatStrText); // 添加JTextArea多行文本输入会被重复添加，导致输入框被覆盖掉
         panel.add(btnSubmit);
         panel.add(rarSubmit);
+
 
         selectTab.setBounds(15, 15, 60, 25);
         JsonSelect.setBounds(75, 15, 60, 25);
         XmlSelect.setBounds(135, 15, 60, 25);
         HtmlSelect.setBounds(191, 15, 60, 25);
         strTab.setBounds(15, 50, 100, 25);
-        formatStrText.setBounds(80, 50, 300, 200);
+        scrollPanel.setBounds(80, 50, 280, 200);
+        formatStrText.setBounds(80, 50, 280, 200);
         btnSubmit.setBounds(80, 260, 100, 25);
         rarSubmit.setBounds(220, 260, 100, 25);
+
 
         return panel;
 

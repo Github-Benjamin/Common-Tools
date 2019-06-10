@@ -10,6 +10,8 @@ public class RarString {
         str = str.replaceAll("\\n", "");
         str = str.replaceAll("\\t", "");
         str = str.replaceAll("\\r", "");
+        str = str.replaceAll(" ", "");
+        str = str.replaceAll("  ", "");
         return str;
     }
 
